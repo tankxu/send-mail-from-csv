@@ -25,7 +25,6 @@ fs.createReadStream(dataFile)
         mail = row.mail;
 
         let imagePath = path.resolve(__dirname, "images/", `${name}.jpg`);
-        console.log(imagePath)
 
         console.log(`【${name}】开始处理`)
 
