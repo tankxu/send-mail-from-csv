@@ -39,10 +39,11 @@ let send = function (mail, imgPath) {
     if (mail && imgPath) {
         console.log('开始发送邮件给 ' + mail)
         mailOptions.to = mail;
-        mailOptions.attachments[0].path = path.resolve(__dirname, imgPath)
+        mailOptions.attachments[0].path = imgPath
         transporter.sendMail(mailOptions, (error, info) => {
             mailOptions.text = '';
             mailOptions.html = '';
+            if (error) console.log(error)
             console.log(`Message: ${info.messageId}`);
             console.log(`sent: ${info.response}`);
         })
